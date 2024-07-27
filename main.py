@@ -43,10 +43,15 @@ def index():
         return redirect(url_for('login'))
    
 # Rutas seguras
-@app.route("/change_password")
-def change_password():
+@app.route("/change_passwor")
+def change_passwor():
     session.clear()
     return redirect(url_for('login'))
+
+@app.route("/change_password")
+def change_password():
+    return render_template('change_password.html')
+
 
 @app.route("/update/<id>")
 def update_task(id):
